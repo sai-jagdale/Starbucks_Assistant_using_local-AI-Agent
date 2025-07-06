@@ -5,7 +5,7 @@ import os
 import pandas as pd
 
 df = pd.read_csv(
-    r"C:\Users\Rajendra\Desktop\Projects\AI_Agent_Local\starbucks_reviews_data.csv"
+    r"C:\Users\Rajendra\Desktop\Projects\Starbucks_Assistant\starbucks_reviews_data.csv"
 )
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 
