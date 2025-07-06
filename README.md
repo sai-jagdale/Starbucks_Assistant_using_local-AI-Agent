@@ -98,6 +98,12 @@ Visit: `http://localhost:5000` in your browser.
 🏪 How is the ambience at Starbucks locations?
 🌍 Where does Starbucks source its coffee beans?
 
+## License
+
+This repository is licensed under the **All Rights Reserved** terms.  
+You are free to **view** the code, but **reproduction, modification, or reuse** is **not permitted** without permission.  
+
+
 
 
 
