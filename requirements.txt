@@ -1,0 +1,19 @@
+# Core LangChain libraries
+langchain            # Main LangChain package for building LLM chains and workflows
+langchain-core       # Core interfaces and base tools used across LangChain
+langchain-community  # Community integrations (retrievers, tools, loaders, etc.)
+langchain-ollama     # LangChain integration for local LLMs via Ollama
+# Local LLM runner
+ollama               # Ollama CLI client to run models like llama3 locally
+
+# Vector database and document retrieval
+langchain-chroma     # Chroma vector store integration with LangChain
+
+# General utilities
+pandas               # Data processing and tabular data handling
+tqdm                 # Progress bars (useful for loops, loading data, etc.)
+requests             # HTTP requests (used to send/receive API calls, if needed)
+
+# Web framework
+flask                # Backend web server for serving the chat UI
+
