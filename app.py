@@ -2,6 +2,14 @@ from flask import Flask, render_template, request, jsonify
 from langchain_ollama.llms import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 from vector import retriever
+import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load from .env file
+
+# Access the key like this:
+google_api_key = os.getenv("GOOGLE_MAPS_API_KEY")
 
 app = Flask(__name__)
 
@@ -45,6 +53,42 @@ def chat():
         response += " ☕"
 
     return jsonify({"answer": response})
+
+
+@app.route("/nearby", methods=["POST"])
+def nearby_starbucks():
+    data = request.get_json()
+    lat = data.get("lat")
+    lng = data.get("lng")
+
+    # 🟤 Use keyword=starbucks and rankby=distance for most relevant Starbucks stores
+    params = {
+        "location": f"{lat},{lng}",
+        "keyword": "starbucks",
+        "rankby": "distance",
+        "type": "cafe",
+        "key": google_api_key,
+    }
+
+    response = requests.get(
+        "https://maps.googleapis.com/maps/api/place/nearbysearch/json", params=params
+    )
+
+    places = response.json().get("results", [])[:5]
+
+    result = []
+    for place in places:
+        result.append(
+            {
+                "name": place["name"],
+                "address": place.get("vicinity", "No address"),
+                "rating": place.get("rating", "N/A"),
+                "lat": place["geometry"]["location"]["lat"],
+                "lng": place["geometry"]["location"]["lng"],
+            }
+        )
+
+    return jsonify(result)
 
 
 if __name__ == "__main__":
