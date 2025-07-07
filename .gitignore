@@ -1,0 +1,42 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# VS Code settings
+.vscode/
+
+# Environment Variables
+.env
+
+# Flask files
+instance/
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Chroma DB (LangChain vector store files)
+chroma_langchain_db/
+*.sqlite3
+
+# Jupyter Notebooks (if any)
+.ipynb_checkpoints/
+
+# Node / front-end extras (if used)
+node_modules/
+
+# Screenshot folders (if large or optional)
+Screenshots*/
