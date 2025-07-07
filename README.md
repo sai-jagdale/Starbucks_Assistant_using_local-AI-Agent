@@ -1,6 +1,6 @@
 # ☕ Starbucks Assistant — AI Chatbot Powered by LLaMA 3 & LangChain
 
-Ask anything about Starbucks — Get intelligent, summarized, and relevant answers using LLaMA 3 (via Ollama), LangChain, and Retrieval-Augmented Generation (RAG) 🔍☕
+Ask anything about Starbucks — Get intelligent, summarized, and relevant answers using LLaMA 3 (via Ollama), LangChain, and Retrieval-Augmented Generation (RAG) 🔍☕,also find the nearest Starbucks
 Works fully offline. Runs in your browser with a friendly coffee-themed UI.
 
 ## 🌟 Features
@@ -8,6 +8,7 @@ Works fully offline. Runs in your browser with a friendly coffee-themed UI.
 - 🤖 **Ask Anything About Starbucks** – From drinks and rewards to sustainability, store policies, and fun facts.
 - 🧠 **Powered by LLaMA3 (via Ollama)** – Runs locally using Meta's LLaMA3-8B model with fast response and full control.
 - 🔍 **RAG-based Chatbot** – Uses Retrieval Augmented Generation for accurate, context-rich responses.
+- 🗺️ **Real-Time “Starbucks Near Me”** – Uses Google Maps API to show nearby Starbucks locations.
 - 💬 **Engaging Coffee-Themed UI** – Chat UI styled with Starbucks color palette, emojis, and rounded messages.
 - ☕ **“Brewing” Typing Animation** – Visual feedback while generating the answer.
 - 📝 **4-5 Sentence Answers** – Optimized for clarity and brevity.
@@ -26,6 +27,9 @@ Works fully offline. Runs in your browser with a friendly coffee-themed UI.
 | 🧠 **RAG**             | Retrieval Augmented Generation – smartly fetches relevant context       |
 | 🎨 **Tailwind CSS**    | Utility-first styling to match the coffee/Starbucks aesthetic           |
 | 📁 **Custom Dataset**  | Starbucks customer reviews (CSV file) used as knowledge base            |
+| 🗺️ **Google Maps API** | To fetch real-time Starbucks nearby                                     |
+| 🔐 **python-dotenv**   | Load API key from **.env**                                              |
+
 
 ## 🧠 How It Works
 
@@ -50,6 +54,7 @@ Starbucks_Assistant/
 ├── chroma_langchain_db
 │  └── chroma.sqlite3
 │ 
+├── .env
 ├── venv/
 │
 ├── static/
@@ -74,7 +79,8 @@ cd starbucks-assistant
 ### 2. Install dependencies in a virtual environment
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate # On Windows
+source venv/bin/activate # On mac/linux 
 pip install -r requirements.txt
 ```
 ### 3. Download the model (LLaMA 3)
@@ -85,9 +91,14 @@ ollama run llama3:instruct
 ### 4. Add your data file
 Place your CSV file (`starbucks_reviews_data.csv`) in the `vector.py` path.
 ---
-### 5. Run the Flask App
+### 5. Add Google Maps API key
+Create a .env file in the root folder with:
 ```bash
-python main.py
+GOOGLE_MAPS_API_KEY=your_actual_api_key_here
+```
+### 6. Run the Flask App
+```bash
+python app.py
 ```
 Visit: `http://localhost:5000` in your browser.
 
@@ -95,15 +106,19 @@ Visit: `http://localhost:5000` in your browser.
 🥤 What are the most loved Starbucks drinks?
 🍪 Do Starbucks stores sell food items too?
 💰 What is the price range of Starbucks coffee?
-🏪 How is the ambience at Starbucks locations?
-🌍 Where does Starbucks source its coffee beans?
+🌿 Is Starbucks sustainable?
+🎁 What are the Starbucks rewards?
+🏪 What’s the vibe like in Starbucks stores?
+📍 Starbucks near me
 
 ## License
 
 This repository is licensed under the **All Rights Reserved** terms.  
 You are free to **view** the code, but **reproduction, modification, or reuse** is **not permitted** without permission.  
 
-
+☕ Credits
+Built by Sai Jagdale ✨
+Inspired by the joy of coffee, open-source LLMs, and LangChain innovation.
 
 
 
