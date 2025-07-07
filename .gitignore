@@ -1,61 +1,22 @@
-# Byte-compiled / optimized / DLL files
+# Python cache and compiled files
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
+# Virtual environment
 venv/
+env/
 ENV/
-VENV/
 .venv/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+.ENV/
 
-# PyInstaller
-*.manifest
-*.spec
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# VS Code
+# VS Code settings
 .vscode/
 
-# PyCharm
-.idea/
+# Environment Variables
+.env
 
-# Flask
+# Flask files
 instance/
 *.db
 *.sqlite3
@@ -63,13 +24,19 @@ instance/
 # Logs
 *.log
 
-# ollama files (if any custom caching)
-ollama/
-ollama-cache/
-
-# macOS
+# OS-specific
 .DS_Store
-
-# Windows
 Thumbs.db
-ehthumbs.db
+
+# Chroma DB (LangChain vector store files)
+chroma_langchain_db/
+*.sqlite3
+
+# Jupyter Notebooks (if any)
+.ipynb_checkpoints/
+
+# Node / front-end extras (if used)
+node_modules/
+
+# Screenshot folders (if large or optional)
+Screenshots*/
