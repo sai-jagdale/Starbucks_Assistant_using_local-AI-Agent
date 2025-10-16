@@ -1,3 +1,6 @@
+# Core Language
+Python
+
 # Core LangChain libraries
 langchain            # Main LangChain package for building LLM chains and workflows
 langchain-core       # Core interfaces and base tools used across LangChain
